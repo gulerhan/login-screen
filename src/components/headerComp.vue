@@ -1,0 +1,31 @@
+<template>
+  <div class="bg-black p-3 d-flex justify-between">
+    <router-link to="/listing" href=""
+      ><img src="../assets/imgs/IMDB.png" alt="" class="w-20"
+    /></router-link>
+    <div>
+      <router-link to="/" href=""
+        ><v-btn elevation="2" color="red lighten-1" @click="logOut"
+          >Çıkış yap</v-btn
+        ></router-link
+      >
+    </div>
+  </div>
+</template>
+
+<script>
+export default {
+  name: "HeaderVue",
+  props: {
+    msg: String,
+  },
+  methods: {
+    logOut() {
+      localStorage.removeItem("user");
+      this.$router.push({ path: "/loginPage" });
+    },
+  },
+};
+</script>
+
+<style scoped></style>
